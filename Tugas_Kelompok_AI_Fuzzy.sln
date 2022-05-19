@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32328.378
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Tugas_Kelompok_AI_Fuzzy", "Tugas_Kelompok_AI_Fuzzy\Tugas_Kelompok_AI_Fuzzy.pyproj", "{BE937CE5-3722-4FD9-80F4-55DC0065729F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BE937CE5-3722-4FD9-80F4-55DC0065729F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE937CE5-3722-4FD9-80F4-55DC0065729F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D23F73CE-C854-45DF-BA8E-D984E2468EBF}
+	EndGlobalSection
+EndGlobal
