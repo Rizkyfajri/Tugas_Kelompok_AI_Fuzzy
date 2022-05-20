@@ -1,8 +1,10 @@
-from typing import Dict
+from typing import Dict, Match
 from collections import defaultdict
 import random 
 import pandas as pd
 import xlsxwriter as xw
+import itertools as itl
+import string
 
 #Buat table generator           || Sudah
 #Isi table generator            || Sudah
@@ -14,42 +16,50 @@ import xlsxwriter as xw
 workbook = xw.Workbook('masukan.xlsx')            #membuat file excel baru
 worksheet = workbook.add_worksheet()            #menambahkan worksheet baru
 
+#==================== list
+
+random.seed(12345)
 tabel_NO = []
 tabel_Nama = []
 tabel_IPK = []
 tabel_Gaji = []
 
 masukan = int(input("masukan jumlah table       :")) #menerima input integer
+#Mengenerate nilai untuk table excel
+#To do
+#generate nomor || sudah
+#Random Nama    || Sudah
+#Random IPK     || Sudah
+#Random Gaji    || Sudah
 
-for i in range(0,masukan):                      #memprosess hasil input untuk menambahkan tabel pada excel
-    if(i<10):                                   #jika angka yang di input kurang dari 10 maka hasil output adalah tabel_0X
-        tabel_NO.append("test")        #tabel_01 tabel_09
-    else:                                       #jika tidak maka angka menjadi double digit setelah digit satu
-        tabel_NO.append("Test")
+for i in range(0,masukan):
+    i = i +1
+    tabel_NO.append(i)
+
+#    if(i<10):                                   #Test
+#        tabel_NO.append("test")                 #
+#    else:                                       #
+#        tabel_NO.append("Test")
+
 
 for i in range(0,masukan):                      
-    if(i<10):                                   
-        tabel_Nama.append("test")        
-    else:                                       
-        tabel_Nama.append("Test")
+    n = string.ascii_uppercase
+    char = ''.join(random.choice(n) for i in range(5))
+    tabel_Nama.append(char)
 
 for i in range(0,masukan):                      
-    if(i<10):                                   
-        tabel_IPK.append("test")        
-    else:                                       
-        tabel_IPK.append("Test")
+    n = random.uniform(0,4)
+    tabel_IPK.append(n)
 
 for i in range(0,masukan):                      
-    if(i<10):                                   
-        tabel_Gaji.append("test")        
-    else:                                       
-        tabel_Gaji.append("Test")
+    n = random.randint(1,20)
+    tabel_Gaji.append(n)
 
 
-    worksheet.write(0,0,"No")
-    worksheet.write(0,1,"Nama")
-    worksheet.write(0,2,"IPK")
-    worksheet.write(0,3,"Gaji")
+worksheet.write(0,0,"No")
+worksheet.write(0,1,"Nama")
+worksheet.write(0,2,"IPK")
+worksheet.write(0,3,"Gaji")
 
 for i in range(0,masukan):                  #berhasil membuat table n*n berisi
     worksheet.write(i+1, 0,tabel_NO[i])
