@@ -48,7 +48,7 @@ for i in range(0,masukan):
     tabel_Nama.append(char)
 
 for i in range(0,masukan):                      
-    n = random.uniform(0,4)
+    n = format(random.uniform(0,4),".2f")
     tabel_IPK.append(n)
 
 for i in range(0,masukan):                      
