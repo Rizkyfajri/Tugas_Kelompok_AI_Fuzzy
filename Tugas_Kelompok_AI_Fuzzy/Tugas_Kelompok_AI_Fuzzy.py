@@ -208,6 +208,11 @@ Tinggi_Tinggi_Tua = list(zip(tinggi,Tua))
 Rendah_Sedang_Tua = list(zip(sedang,Tua))
 Rendah_Rendah_Tua = list(zip(rendah,Tua))
 
+
+#defuzzification 
+Perkalian_New = 0
+Pembagian_New = 0
+
 for i in range(0,len(Tinggi_Tinggi_Muda)):
     perkalian = Tinggi_Tinggi_Muda[i][0] * Tinggi_Tinggi_Muda[i][1]
     pembagian = Tinggi_Tinggi_Muda[i][0]
