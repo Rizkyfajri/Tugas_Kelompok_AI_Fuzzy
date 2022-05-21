@@ -2,6 +2,7 @@ from typing import Dict, Match
 from collections import defaultdict
 import random 
 import pandas as pd
+from pandas.core.frame import DataFrame
 import xlsxwriter as xw
 import itertools as itl
 import string
@@ -135,9 +136,9 @@ for i in range(len(tabel_IPK)):
     rendah.append(IPKrendah(tabel_IPK))
 
 
-print(tinggi)
-print(sedang)
-print(rendah)
+#print(tinggi)
+#print(sedang)
+#print(rendah)
 
 #usia
 # muda      18 <= n < 21
@@ -191,4 +192,37 @@ for i in range(len(tabel_Umur)):
 #print(Menengah)
 #print(Tua)
 
-NK = pd.DataFrame(list(zip()))
+NK1 = pd.DataFrame(list(zip(tabel_NO,tabel_Nama,tinggi,sedang,rendah)), columns= ['No','Nama','Tinggi','Sedang','Rendah'])
+NK2 = pd.DataFrame(list(zip(tabel_NO,tabel_Nama,Muda,Menengah,Tua)), columns= ['No','Nama','Muda','Menengah','Tua'])
+#inferensi
+
+Tinggi_Tinggi_Muda = list(zip(tinggi,Muda))
+Tinggi_Sedang_Muda = list(zip(sedang,Muda))
+Rendah_Rendah_Muda = list(zip(rendah,Muda))
+
+Tinggi_Tinggi_Menengah = list(zip(tinggi,Menengah))
+Rendah_Sedang_Menengah = list(zip(sedang,Menengah))
+Rendah_Rendah_Menengah = list(zip(rendah,Menengah))
+
+Tinggi_Tinggi_Tua = list(zip(tinggi,Tua))
+Rendah_Sedang_Tua = list(zip(sedang,Tua))
+Rendah_Rendah_Tua = list(zip(rendah,Tua))
+
+for i in range(0,len(Tinggi_Tinggi_Muda)):
+    perkalian = Tinggi_Tinggi_Muda[i][0] * Tinggi_Tinggi_Muda[i][1]
+    pembagian = Tinggi_Tinggi_Muda[i][0]
+    Perkalian_New = Perkalian_New + perkalian
+    Pembagian_New = Pembagian_New + pembagian
+z = Perkalian_New / Pembagian_New
+
+print(z)
+"""
+for(a,b) in Hasil_dict:
+    if key in Hasil_dict:
+        Hasil_dict
+"""
+#Sort_NK1 = DataFrame.sort_values(NK1, ascending=['0'])
+
+#print(NK1.head(10))
+#print(NK2.head(10))
+#NK2 = pd.DataFrame(list(zip(tabel_NO,tabel_Nama,Muda,Menengah,Tua)))
